@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 
 if (isset($_SESSION['user_id'])) { header('Location: dashboard.php'); exit; }
 

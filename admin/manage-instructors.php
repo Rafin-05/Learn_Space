@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 if (!isset($_SESSION['admin_id'])) { header('Location: login.php'); exit; }
 
 if (isset($_GET['action']) && isset($_GET['id'])) {

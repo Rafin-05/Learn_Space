@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 if (!isset($_SESSION['instructor_id'])) { header('Location: login.php'); exit; }
 $ins_id = $_SESSION['instructor_id'];
 $_has_resolved = $conn->query("SELECT COUNT(*) as c FROM support_messages WHERE sender_type='instructor' AND sender_id=$ins_id AND status='resolved'")->fetch_assoc()['c'] > 0;

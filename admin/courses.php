@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 if (!isset($_SESSION['admin_id'])) { header('Location: login.php'); exit; }
 
 $courses = $conn->query("SELECT c.*, i.full_name as instructor_name,

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 $user_id = $_SESSION['user_id'] ?? 0;
 
 $id = intval($_GET['id'] ?? 0);

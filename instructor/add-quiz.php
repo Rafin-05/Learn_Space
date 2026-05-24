@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db.php';
+require_once __DIR__ . '/../includes/db.php';
 if (!isset($_SESSION['instructor_id'])) { header('Location: login.php'); exit; }
 $ins_id = $_SESSION['instructor_id'];
 
