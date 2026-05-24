@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once __DIR__ . '/../includes/db.php';
+session_start();
 
 $search = trim($_GET['search'] ?? '');
 $user_id = $_SESSION['user_id'] ?? 0;

@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once __DIR__ . '/../includes/db.php';
+session_start();
 if (!isset($_SESSION['admin_id'])) { header('Location: login.php'); exit; }
 
 $pending = $conn->query("SELECT c.*, i.full_name as instructor_name,

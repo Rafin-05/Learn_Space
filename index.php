@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once 'includes/db.php';
+session_start();
 
 // Fetch approved courses for display
 $courses_query = "SELECT c.*, i.full_name as instructor_name, 

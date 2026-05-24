@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once __DIR__ . '/../includes/db.php';
+session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
 $user_id = $_SESSION['user_id'];
 $_has_resolved = $conn->query("SELECT COUNT(*) as c FROM support_messages WHERE sender_type='learner' AND sender_id=$user_id AND status='resolved'")->fetch_assoc()['c'] > 0;
