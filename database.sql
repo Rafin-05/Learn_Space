@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS admins (
 );
 
 -- Insert default admin
-INSERT INTO admins (username, password) VALUES ('admin', '12345678');
+INSERT IGNORE INTO admins (username, password) VALUES ('admin', '12345678');
 
 -- Users table (learners)
 CREATE TABLE IF NOT EXISTS users (
@@ -239,9 +239,9 @@ CREATE TABLE IF NOT EXISTS support_messages (
 
 -- Add prize columns to contests table
 ALTER TABLE contests 
-  ADD COLUMN IF NOT EXISTS prize_1st VARCHAR(255) DEFAULT NULL,
-  ADD COLUMN IF NOT EXISTS prize_2nd VARCHAR(255) DEFAULT NULL,
-  ADD COLUMN IF NOT EXISTS prize_3rd VARCHAR(255) DEFAULT NULL;
+  ADD COLUMN prize_1st VARCHAR(255) DEFAULT NULL,
+  ADD COLUMN prize_2nd VARCHAR(255) DEFAULT NULL,
+  ADD COLUMN prize_3rd VARCHAR(255) DEFAULT NULL;
 
 -- Contest prizes table (flexible per-position prizes)
 CREATE TABLE IF NOT EXISTS contest_prizes (
@@ -257,7 +257,7 @@ CREATE TABLE IF NOT EXISTS contest_prizes (
 -- MIGRATION: Add admin_comment to support_messages
 -- Run this if you already have the table created
 -- =============================================
-ALTER TABLE support_messages ADD COLUMN IF NOT EXISTS admin_comment TEXT DEFAULT NULL;
+ALTER TABLE support_messages ADD COLUMN admin_comment TEXT DEFAULT NULL;
 
 -- =============================================
 -- CODING PROBLEMS (Beecrowd style)
